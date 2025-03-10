@@ -10,6 +10,11 @@ const port = 3000;
 // Enable CORS for all origins
 app.use(cors());
 
+// Your routes here
+app.get('/', (req, res) => {
+    res.send('CORS is working!');
+});
+
 // Serve the index.html file from the /index folder
 app.use(express.static(path.join(__dirname, 'index')));
 
