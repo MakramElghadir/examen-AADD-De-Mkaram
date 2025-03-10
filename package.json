@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/MakramElghadir/examen-AADD-De-Mkaram#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.21.2"
   }
 }
