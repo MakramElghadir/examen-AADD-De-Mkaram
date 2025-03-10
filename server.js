@@ -7,7 +7,8 @@ const http = require('http');
 const https = require('https');
 
 const app = express();
-const port = 3000;
+const httpPort = 3000;  // HTTP Port
+const httpsPort = 3001; // HTTPS Port
 
 // Set up SSL options for HTTPS
 const sslOptions = {
@@ -19,11 +20,11 @@ const sslOptions = {
 app.use(express.static(path.join(__dirname, 'index')));
 
 // Start the HTTP server (for http://172.233.124.12:3000)
-http.createServer(app).listen(port, '0.0.0.0', () => {
-  console.log(`HTTP Server is running at http://172.233.124.12:${port}`);
+http.createServer(app).listen(httpPort, '0.0.0.0', () => {
+  console.log(`HTTP Server is running at http://172.233.124.12:${httpPort}`);
 });
 
-// Start the HTTPS server (for https://172.233.124.12:3000)
-https.createServer(sslOptions, app).listen(port, '0.0.0.0', () => {
-  console.log(`HTTPS Server is running at https://172.233.124.12:${port}`);
+// Start the HTTPS server (for https://172.233.124.12:3001)
+https.createServer(sslOptions, app).listen(httpsPort, '0.0.0.0', () => {
+  console.log(`HTTPS Server is running at https://172.233.124.12:${httpsPort}`);
 });
